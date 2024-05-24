@@ -6,7 +6,7 @@ Written using Python 3. Uses the path module, so is appropriate for Windows and 
 I hope this script saves you a lot of time. It is lightweight and simple compared to others, I mostly wrote it as an exercise in webscraping.
 <h2>Prerequisites</h2>
 This script uses <i>requests, beautifulsoup 4,</i> and <i>pathlib</i> third party modules.
-If you don't have them, you must use 'pip install [requests / beautifulsoup4 / pathlib' for the script to run.
+If you don't have them, you must use 'pip install [requests / beautifulsoup4 / pathlib]' for the script to run.
 
 You also need Python 3 to run the script. Both Python and pip can be installed from [here.](https://www.python.org/downloads/)
 <h2>Usage</h2>
