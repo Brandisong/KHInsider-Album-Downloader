@@ -32,7 +32,7 @@ if res.status_code != requests.codes.ok:
     sys.exit()
 
 # Parse with bs4
-khiSoup = bs4.BeautifulSoup(res.text, features="lxml")
+khiSoup = bs4.BeautifulSoup(res.text, features="html.parser")
 
 # Check if empty
 emptyCheck = khiSoup.select('#pageContent > h2')
@@ -78,7 +78,7 @@ for url in clean_list:
     res.raise_for_status() # Exit if it fucked up
 
     # Parse with bs4
-    khiSoup = bs4.BeautifulSoup(res.text, features="lxml")
+    khiSoup = bs4.BeautifulSoup(res.text, features="html.parser")
 
     # Get mp3 selector
     if fileType == "mp3":
