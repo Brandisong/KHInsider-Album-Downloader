@@ -12,11 +12,11 @@ You also need Python 3 to run the script. Both Python and pip can be installed f
 <h2>Usage</h2>
 Run from commandline:
 
-> py khi_scraper [url] [--mp3 / --flac]
+> py khi_scraper.py [url] [--mp3 / --flac]
 
 E.g. to download the King's Field 4 OST in .mp3 format:
 
-> py khi_scraper https://downloads.khinsider.com/game-soundtracks/album/king-s-field-iv-the-ancient-city-gamerip --mp3
+> py khi_scraper.py https://downloads.khinsider.com/game-soundtracks/album/king-s-field-iv-the-ancient-city-gamerip --mp3
 
 Alternatively, if you wanted .flac files, substitute --mp3 with --flac.
 
