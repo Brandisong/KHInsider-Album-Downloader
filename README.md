@@ -21,4 +21,4 @@ E.g. to download the King's Field 4 OST in .mp3 format:
 Alternatively, if you wanted .flac files, substitute --mp3 with --flac.
 
 <h2>Output</h2>
-This will create a folder of the album name <b>in the current working directory,</b> and download each of the listed tracks with appropriate order and title names. MP3 files come with appropriate metadata, and tracks are named with a numbered prefix.
+This will create a folder of the album name <b>in the Downloads folder,</b> or alternatively in the working directory if you don't have one. It will then download each of the listed tracks with appropriate order and title names. MP3 files come with appropriate metadata, and tracks are named with a numbered prefix.
