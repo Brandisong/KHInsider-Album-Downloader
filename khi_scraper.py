@@ -70,7 +70,12 @@ albumName = khiSoup.select("#pageContent > h2")[0]
 albumName = str(albumName)[4:len(albumName)-6]
 print(albumName)
 albumNameAlNum = ''.join(x for x in albumName if x.isalnum())
-Path(albumNameAlNum).mkdir()
+
+# Make album directory in downloads, else in working directory
+if Path(Path.home(), "Downloads").exists:
+    Path(Path.home(), "Downloads", albumNameAlNum).mkdir()
+else:
+    Path(albumNameAlNum).mkdir()
 
 # Get each song download link from the unique list
 for url in clean_list:
@@ -100,7 +105,12 @@ for url in clean_list:
 
     # Download the song
     res = requests.get(downloadLink.get('href'))
-    directory = Path(albumNameAlNum, (str(trackCount) + " " + trackName + "." + fileType))
+
+    # Change directory to working directory if there's no Downloads folder
+    if Path(Path.home(), "Downloads").exists:
+        directory = Path(Path.home(), "Downloads", albumNameAlNum, (str(trackCount) + " " + trackName + "." + fileType))
+    else:
+        directory = Path(albumNameAlNum, (str(trackCount) + " " + trackName + "." + fileType))
     
     trackFile = open(directory, 'wb')
     for chunk in res.iter_content(100000):
