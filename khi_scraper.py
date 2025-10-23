@@ -23,12 +23,13 @@ else:
         sys.exit()
 
 # Attempt to get the web page
-res = requests.get(url)
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+res = requests.get(url, headers=headers)
 
 # Check to see if it worked
 if res.status_code != requests.codes.ok:
     print("Request failed, please check the link and try again.")
-    print("Returned with code" + res.status_code)
+    print("Returned with code " + str(res.status_code))
     sys.exit()
 
 # Parse with bs4
@@ -79,7 +80,7 @@ else:
 
 # Get each song download link from the unique list
 for url in clean_list:
-    res = requests.get(url)
+    res = requests.get(url, headers=headers)
     res.raise_for_status() # Exit if it fucked up
 
     # Parse with bs4
